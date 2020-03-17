@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="es">
+  <texts>
+    <text name="HomePage" value="Página de Inicio" />
+    <text name="About" value="Acerca" />
+    <text name="WelcomeMessage" value="Bienvenidos a MetroDevABM!" />
+    <text name="Home_ThisIsATemplate" value="Este proyecto es una plantilla que sirve como punto de partida para desarrollar una aplicación web en desarrollo..." />
+    <text name="Home_AspNetDescription" value="ASP.NET MVC le brinda una forma poderosa, basada en patrones para crear sitios web dinámicos que permite una separación clara de las preocupaciones y le brinda un control total sobre la codificación para un desarrollo ágil y agradable." />
+    <text name="Home_AspNetBoilerplateDescription" value="ASP.NET Boilerplate es un grupo de herramientas para crear aplicaciones basadas en web con las mejores prácticas y las herramientas más populares." />
+    <text name="Others" value="Otros" />
+    <text name="LearnMore" value="Lea más" />
+    <text name="Home_OtherTools" value="Muchas otras herramientas/librerias como ASP.NET Web API, EntityFramework/NHibernate, Castle Windsor, Log4Net, Twitter Bootstrap, jQuery..." />
+    <text name="AboutFormat" value="Acerca de {0}" />
+    <text name="About_AspNetBoilerplateDescription" value="ASP.NET Boilerplate es un punto de partida para nuevas aplicaciones web con las mejores prácticas y las herramientas más populares. ASP.NET Boilerplate proporciona una infraestructura para la &lt;strong&gt;arquitectura NLayer&lt;/strong&gt; y el &lt;strong&gt;diseño controlado por dominio&lt;/strong&gt;." />
+    <text name="ForMoreInformation" value="Para mas información" />
+    <text name="Catalog" value="Catálogo" />
+    <text name="ClientType" value="Tipo de Cliente" />
+    <text name="Client" value="Cliente" />
+    <text name="Gender" value="Género" />
+    <text name="GenderList" value="Lista de Géneros" />
+    <text name="lblAddNew" value="Agregar" />
+    <text name="AddNewRegistry" value="Agregar Registro" />
+    <text name="lblEdit" value="Editar" />
+    <text name="lblDelete" value="Eliminar" />
+    <text name="EditRegistry" value="Editar Registro" />
+    <text name="DeleteRegistry" value="Eliminar Registro" />
+    <text name="NoRecords" value="Sin Registros" />
+    <text name="Title" value="Título" />
+    <text name="Save" value="Guardar" />
+    <text name="CreateGender" value="Crear Género" />
+    <text name="EditGender" value="Editar Género"/>
+    <text name="ErrorAtUpdateInDB" value="Error al actualizar en la Base de Datos" />
+    <text name="ErrorAtDeleteInDB" value="Error al eliminar el registro en la Base de Datos" />
+    <text name="ConfirmDeleteRegistry" value="¿Está seguro de eliminar el registro [{0}]?" />
+    <text name="ClientTypeList" value="Lista de Tipo de Cliente" />
+    <text name="CreateClientType" value="Crear Tipo de Cliente" />
+    <text name="EditClientType" value="Editar Tipo de Cliente" />
+    <text name="Description" value="Descripción" />
+    <text name="ClientList" value="Lista de Clientes" />
+    <text name="Name" value="Nombre" />
+    <text name="LastName" value="Apellido" />
+    <text name="Address" value="Domicilio" />
+    <text name="lblSelect" value="[ SELECCIONE ]" />
+    <text name="CreateClient" value="Crear Cliente" />
+    <text name="EditClient" value="Editar Cliente" />
+  </texts>
+</localizationDictionary>

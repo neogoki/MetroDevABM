@@ -1,0 +1,86 @@
+﻿@model MetroDevABM.Web.Models.Clients.IndexViewModel
+
+@{
+    ViewBag.Title = L("ClientList");
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        var LocalApp = function () {
+            return {
+                ConfirmDelete: function (registryname, id) {
+                    var message = "@Html.Raw(L("ConfirmDeleteRegistry"))".replace("{0}", registryname);
+                    if (confirm(message)) {
+                        $("[name='Id']", $("#FormDelete")).val(id)
+                        $("#FormDelete").submit();
+                    }
+                }
+            };
+        }();
+
+    </script>
+}
+@using (Html.BeginForm("Delete", "Client", FormMethod.Post, new { id = "FormDelete"}))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="Id">
+}
+<h2>
+    @L("ClientList")
+</h2>
+
+<div class="row">
+    <div>
+        <table class="table table-striped table-bordered">
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col style="width:147px; text-align:right" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>@L("Name")</th>
+                    <th>@L("LastName")</th>
+                    <th>@L("Address")</th>
+                    <th>@L("ClientType")</th>
+                    <th>@L("Gender")</th>
+                    <th style="text-align:right">
+                        @Html.ActionLink(L("lblAddNew"), "Create", null, new { @class = "btn btn-primary btn-sm", title = L("AddNewRegistry") })
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Clients.Count > 0)
+                {
+                    foreach (var item in Model.Clients)
+                    {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Address</td>
+                    <td>@item.ClientTypeTitle</td>
+                    <td>@item.GenderTitle</td>
+                    <td>
+                        @Html.ActionLink(L("lblEdit"), "Edit", new { id = item.Id }, new { title = L("EditRegistry"), @class = "btn btn-success btn-sm" })
+                        <button class="btn btn-danger btn-sm" onclick="LocalApp.ConfirmDelete('@(item.Name + " " + item.LastName)', @item.Id)">@L("lblDelete")</button>
+                    </td>
+                </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7">
+                            @L("NoRecords")
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

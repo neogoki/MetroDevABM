@@ -1,0 +1,53 @@
+﻿@model MetroDevABM.Web.Models.Clients.CreateViewModel
+
+@{
+    ViewBag.Title = L("CreateClient");
+}
+
+@section scripts
+{
+
+}
+
+<h2>
+    @L("CreateClient")
+</h2>
+
+@using (Html.BeginForm("Create", "Client", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Title">@L("Name")</label>
+                <input type="text" name="Name" class="form-control" placeholder="@L("Name")" required maxlength="@MetroDevABM.Clients.Client.MaxStringLenght">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Title">@L("LastName")</label>
+                <input type="text" name="LastName" class="form-control" placeholder="@L("LastName")" required maxlength="@MetroDevABM.Clients.Client.MaxStringLenght">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Title">@L("Gender")</label>
+                @Html.DropDownList("GenderId", new SelectList(Model.Genders, "Value", "Text", Model.GenderId), L("lblSelect"), new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Title">@L("ClientType")</label>
+                @Html.DropDownList("ClientTypeId", new SelectList(Model.ClientTypes, "Value", "Text", Model.ClientTypeId), L("lblSelect"), new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Address">@L("Address")</label>
+        <textarea name="Address" class="form-control" placeholder="@L("Address")"></textarea>
+    </div>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-warning" })
+    <button type="submit" class="btn btn-default">@L("Save")</button>
+}

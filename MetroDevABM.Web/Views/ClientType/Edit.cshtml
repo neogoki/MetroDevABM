@@ -1,0 +1,28 @@
+﻿@model MetroDevABM.ClientTypes.Dto.ClientTypeDto
+@{
+    ViewBag.Title = L("EditClientType");
+}
+@section scripts
+{
+
+}
+<h2>
+    @L("EditClientType")
+</h2>
+
+@using (Html.BeginForm("Edit", "ClientType", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    <input type="hidden" value="@Model.Id" name="Id" />
+    <div class="form-group">
+        <label for="Title">@L("Title")</label>
+        <input type="text" name="Title" class="form-control" value="@Model.Title" placeholder="@L("Title")" required maxlength="@MetroDevABM.ClientTypes.ClientType.MaxTitleLength">
+    </div>
+    <div class="form-group">
+        <label for="Title">@L("Description")</label>
+        <textarea name="Description" class="form-control" placeholder="@L("Description")" maxlength="@MetroDevABM.ClientTypes.ClientType.MaxDescriptionLength">@Model.Description</textarea>
+    </div>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-warning" })
+    <button type="submit" class="btn btn-default">@L("Save")</button>
+}
+

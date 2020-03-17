@@ -1,0 +1,29 @@
+﻿@model MetroDevABM.Web.Models.ClientTypes.CreateViewModel
+
+@{
+    ViewBag.Title = L("CreateClientType");
+}
+
+@section scripts
+{
+
+}
+
+<h2>
+    @L("CreateClientType")
+</h2>
+
+@using (Html.BeginForm("Create", "ClientType", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+    <div class="form-group">
+        <label for="Title">@L("Title")</label>
+        <input type="text" name="Title" class="form-control" placeholder="@L("Title")" required maxlength="@MetroDevABM.ClientTypes.ClientType.MaxTitleLength">
+    </div>
+    <div class="form-group">
+        <label for="Title">@L("Description")</label>
+        <textarea name="Description" class="form-control" placeholder="@L("Description")" maxlength="@MetroDevABM.ClientTypes.ClientType.MaxDescriptionLength"></textarea>
+    </div>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class="btn btn-warning" })
+    <button type="submit" class="btn btn-default">@L("Save")</button>
+}
